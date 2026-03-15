@@ -1,0 +1,32 @@
+import { memo } from "react";
+import styles from "./WorkItemPage.module.css";
+
+function MessageInput({ message, setMessage }) {
+  console.log("MessageInput rendered"); // for debugging
+
+  return (
+    <div className={styles.messageBox}>
+      <div>
+        <label htmlFor="yourOfferPrice">your Offerprice</label>
+        <input
+          type="text"
+          name="yourOfferPrice"
+          id="yourOfferPrice"
+          className={styles.yourOfferPrice}
+        />
+      </div>
+      <div className={styles.yourMessage}>
+        <label htmlFor="message">Any message from your end</label>
+        <textarea
+          name="message"
+          id="message"
+          className={styles.message}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        ></textarea>
+      </div>
+    </div>
+  );
+}
+
+export default memo(MessageInput);

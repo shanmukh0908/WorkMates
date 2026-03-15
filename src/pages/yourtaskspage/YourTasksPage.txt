@@ -1,0 +1,91 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-empty */
+
+import jwtDecode from "jwt-decode";
+import styles from "./YourTasksPage.module.css"
+import { useSelector,useDispatch } from "react-redux";
+import { setSavedTasks } from "../../features/tasks/tasksSlice";
+import useGetSavedTasks from "../../hooks/savedTasks/useGetSavedTasks";
+import { createSavedTask,deleteSavedTask } from "../../services/apis/savedTasks";
+import useFilteredTasks from "../../hooks/tasks/useFilteredTasks"
+import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+export default function YourTasksPage(){
+    const memo = useMemo()
+    const navigate = useNavigate()
+    const token = localStorage.getItem("token"); // or from cookies
+    const decoded = jwtDecode(token);
+    console.log("Decoded token:", decoded);
+    const [taskstatus,setTaskStatus] = useState("assigned")
+
+    // const {filters,location,savedtaskids} =  useSelector((store) =>store.tasks)
+
+    const userId = decoded.id || decoded.userId || decoded._id;
+
+    console.log("userid",userId)
+
+    const dispatch = useDispatch()
+
+    const { data:savedtaskdata,refetch:refetchsaved, isFetching:isFetchingsaved } = useGetSavedTasks(); 
+    console.log("saved tasks",savedtaskdata)
+
+    const status =taskstatus !== "saved" ? taskstatus : "assigned";
+
+    const taskfilters = useMemo(() => ({
+    acceptedBy: userId,
+    status
+    }), [userId, status]);
+
+    const { data:filtertaskdata,refetch:refetchfiltered, isFetching:isFetchingFiltered } = useFilteredTasks(taskfilters); 
+
+    console.log("filetered tasks",filtertaskdata)
+
+    
+    if (!userId){
+      console.error("User ID not found in token");
+      return;
+    }
+
+    let tasklist = taskstatus === "assigned" || taskstatus === "colsed" ? filtertaskdata : savedtaskdata
+
+    let activeSavedTasks = taskstatus === "saved" ? tasklist.map(task => task._id) : []
+
+    async function handleSaveClick(taskId) {
+      await deleteSavedTask(taskId)
+      await refetchsaved()
+    }
+
+    return (
+
+    <div className={styles.tasksBox}>
+
+    <div className ={styles.taskStatusBox}>
+        <button className={styles.finishedtaskButton}>completed tasks</button>
+        <button className={styles.upcomingTasksButton}>upcoming tasks</button>
+        <button className={styles.savedTasksButton}>saved tasks</button>
+    </div>
+
+    <div className={styles.taskList}> 
+        <ul className={styles.taskList}>
+        {tasklist.map((task, index) => (
+          <li key={index} className={styles.taskListItem} onClick={()=>navigate("/tasks/123", { state: { task } })}>
+            <div className={styles.user}>
+              <img src={ task.createdBy.profilePhoto ? `http://localhost:3000/public/profilephotos/${task.createdBy.profilePhoto}`: "/tmuser1.png"} alt="user1" className={styles.userImg} />
+              <p className={styles.userName}>{task?.createdBy.name || "abc"}</p>
+            </div>
+            <p>{task?.distanceFromUser || "100"} km</p>
+            <p>Category: {task?.category || "abc"}</p>
+            <DocumentPlusIcon className={activeSavedTasks?.includes(task._id) ? `${styles.SaveIcon} ${styles.saved}`: styles.SaveIcon}
+            onClick={(e) =>{
+              e.stopPropagation();
+              handleSaveClick(task._id)
+              }}/>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    </div>
+)
+}

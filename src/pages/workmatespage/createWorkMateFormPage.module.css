@@ -1,0 +1,116 @@
+/* Container */
+.formContainer {
+  min-height: 100vh;
+  min-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Heading */
+.formContainer h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2.5fr;
+  color: #222;
+  font-weight: 600;
+}
+
+.CreateWorkMateForm{
+  width: min(62rem,90%);
+  height: max-content;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(18px);
+  border-radius: 18px;
+  padding: 5rem;
+  box-shadow:0 30px 60px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+}
+/* Input Group */
+.inputBox {
+  margin-bottom: 2.0fr;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.inputBox label {
+  margin-bottom: .6fr;
+  font-weight: 500;
+  color: #444;
+  font-size: 2rem;
+}
+
+/* React Select style */
+.mySelect__control {
+  border-radius: .8fr !important;
+  border: .1fr solid #d1d5db !important;
+  padding: .2fr !important;
+  min-height: 4.5fr !important;
+  box-shadow: none !important;
+  transition: 0.2s ease;
+}
+
+.mySelect__control--is-focused {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 .2fr rgba(99, 102, 241, 0.2) !important;
+}
+
+.mySelect__placeholder {
+  color: #888 !important;
+}
+
+.mySelect__single-value {
+  color: #333 !important;
+}
+
+.mySelect__menu {
+  border-radius: .8fr !important;
+  overflow: hidden !important;
+}
+
+.mySelect__option--is-focused {
+  background: #f3f4f6 !important;
+}
+
+.mySelect__option--is-selected {
+  background: #6366f1 !important;
+  color: white !important;
+}
+
+/* Error message */
+.error {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: .5fr;
+}
+
+/* Submit Button */
+.skillButton {
+  width: 100%;
+  height: 3rem;
+  background: #6366f1;
+  color: white;
+  padding: 1.2fr;
+  border: none;
+  font-size: 1rem;
+  border-radius: 1.0fr;
+  cursor: pointer;
+  margin-top: 1.0fr;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.skillButton:hover {
+  background: #4f46e5;
+  transform: translateY(-.1fr);
+}
+
+.skillButton:active {
+  transform: translateY(.1fr);
+}

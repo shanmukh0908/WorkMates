@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= Filter ================= */
+
+.FilterIcon {
+  width: 4.4rem;
+  position: absolute;
+  top: 2.9rem;
+  left: 1.6rem;
+  z-index: 5;
+}
+
+.svgicon {
+  color: #475569;
+  cursor: pointer;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.svgicon:hover {
+  transform: scale(1.15);
+  color: #6366f1;
+}
+
+.FilterBox {
+  position: absolute;
+  top: 7.2rem;
+  left: 33.0rem;
+  z-index: 20;
+  min-width: min(80fr,80vw);
+  background: none;
+  backdrop-filter: blur(1.2rem);
+
+  border-radius: 1.6rem;
+  box-shadow: 0 2.0rem 4.0rem rgba(99, 102, 241, 0.25);
+}
+
+/* ================= Layout ================= */
+
+.ListBox {
+  position: relative;
+  width: min(120rem,90vw);
+}
+
+/* ================= Task Grid ================= */
+
+.taskList {
+  padding: 6rem;
+  margin-top: 2rem;
+  /* align-self: center; */
+  justify-self: center;
+  width: min(90vw,120rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  list-style: none;
+  column-gap: 4.8rem;
+  row-gap: 3.6rem;
+
+  justify-content: center;
+
+  background: #f8fafc;
+  border: .1rem solid #e5e7eb;
+  border-radius: 2.0rem;
+}
+
+/* ================= Task Card ================= */
+
+.taskListItem {
+  background: #ffffff;
+  color: #0f172a;
+
+  border-radius: 1.6rem;
+  padding: 1.8rem;
+  max-width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.0rem;
+
+  position: relative;
+  cursor: pointer;
+
+  box-shadow: 0 1.0rem 2.5rem rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  font-weight: 600;
+}
+
+.taskListItem:hover {
+  transform: translateY(-.6rem);
+  box-shadow: 0 2.0rem 4.0rem rgba(99, 102, 241, 0.25);
+}
+
+/* ================= Save Icon ================= */
+
+.SaveIcon {
+  width: 2.8rem;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  cursor: pointer;
+  stroke: #94a3b8;
+
+  transition: transform 0.2s ease, stroke 0.2s ease;
+}
+
+.SaveIcon:hover {
+  transform: scale(1.1);
+  stroke: #6366f1;
+}
+
+.saved {
+  fill: hsla(48, 96%, 53%, 0.477);
+  stroke: hsl(48, 96%, 53%);
+}
+
+/* ================= User ================= */
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.userImg {
+  width: 6.0rem;
+  height: 6.0rem;
+  border-radius: 50%;
+  padding: .4rem;
+
+  border: .2rem solid #6366f1;
+  background: white;
+}
+
+.userName {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* ================= Meta ================= */
+
+.distance {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+.rating {
+  font-size: 1.4rem;
+  color: #64748b;
+}
+
+
+.gobackLink {
+  margin-top: 1.0rem;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #475569; /* subtle slate */
+  transition: all 0.3s ease;
+}
+
+.gobackLink span {
+  color: #4f46e5;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+}
+
+/* ================= Pagination ================= */
+
+.pagination {
+  align-self: center;
+  justify-self: center;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+@media (max-width: 945px) {
+  .taskList {
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+}
+
+.FilterBox {
+  top: 10vw;
+  left: 10vw;
+}
+  }

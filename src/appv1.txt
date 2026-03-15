@@ -1,0 +1,76 @@
+import { createBrowserRouter,RouterProvider } from "react-router-dom"
+import GlobalStyles from "./styles/GlobalStyles"
+
+import AppLayout from "./ui/AppLayout/AppLayout.jsx"
+import HomePage from "./pages/homepage/HomePage.jsx";
+import TasksPage from "./pages/tasks/TasksPage.jsx";
+import Errorpage from "./errors/Errorpage.jsx"
+import WorkItemPage from "./pages/workitempage/WorkItemPage.jsx";
+import YourTasksPage from "./pages/yourtaskspage/YourTasksPage.jsx"
+import NotificationsPage from "./pages/notifications/NotificationsPage.jsx";
+import ProfilePage from "./pages/profile/ProfilePage.jsx";
+import SettingsPage from "./pages/settings/SettingsPage.jsx"
+import ProfileSettingsPage from "./pages/settings/profilesettings/ProfileSettingsPage.jsx"
+import EmailPasswordSettingsPage from "./pages/settings/emailpasswordsettings/EmailPasswordSettingsPage.jsx"
+import NotificationSettingsPage from "./pages/settings/notificationssettings/NotificationSettingsPage.jsx"
+import VisibilitySettingsPage from "./pages/settings/visibilitysettings/VisibilitySettingsPage.jsx"
+import SignUpFormPage from "./pages/signupform/SignUpFormPage.jsx";
+import LogInFormPage from "./pages/loginformpage/LogInFormPage.jsx";
+import CreateTaskFormPage from "./pages/tasks/createTaskFormPage.jsx";
+import MessagePage from "./pages/messagepage/messagePage.jsx";
+import AllMessagesPage from "./pages/messagepage/AllmessagesPage.jsx";
+
+const router = createBrowserRouter([
+  {
+    element: <AppLayout />,
+    errorElement: <Errorpage />,
+    children: [
+      { path: "/", element: <HomePage /> },
+      { path: "/tasks", element: <TasksPage /> },
+      { path: "/tasks/:id", element: <WorkItemPage /> },
+      { path: "/yourtasks", element: <YourTasksPage /> },
+
+      
+      { path:"/messages",
+        element: <AllMessagesPage />,
+        childre:[
+          { path:":id",element: <MessagePage /> },
+          ]
+       },
+
+      {
+        path: "/settings",
+        element: <SettingsPage />,
+        children: [
+          { index: true, element: <ProfileSettingsPage /> }, // default child
+          { path: "profile", element: <ProfileSettingsPage /> },
+          { path: "email-password", element: <EmailPasswordSettingsPage /> },
+          { path: "notifications", element: <NotificationSettingsPage /> },
+          { path: "visibility", element: <VisibilitySettingsPage /> },
+        ],
+      },
+
+      { path:"/createTask",element: <CreateTaskFormPage />},
+      { path: "/profile/:id", element: <ProfilePage/> },
+      { path: "/notifications", element: <NotificationsPage /> },
+    ],
+  },
+
+  {
+    path:"/signup",
+    element:<SignUpFormPage />
+  },
+  
+  {
+    path:"/login",
+    element:<LogInFormPage />
+  }
+]);
+
+export default function App(){
+  return <>
+    <GlobalStyles/>
+    <RouterProvider router={router}/>
+  </>
+}
+

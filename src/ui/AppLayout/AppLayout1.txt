@@ -1,0 +1,55 @@
+import styled from "styled-components";
+import Header from "../Header/Header";
+import { Link, Outlet } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import getUserDetails from "../../services/apis/getUserDetails";
+import getUserIdFromToken from "../../services/apis/getUserIdFromToken";
+
+const StyledAppLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+function AppLayout() {
+  const accessToken = localStorage.getItem("accessToken");
+  const currentUserId = getUserIdFromToken();
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["user"],
+    queryFn: getUserDetails,
+    enabled: !!accessToken, 
+    staleTime: 1000 * 60 * 5,
+  });
+
+  const user = data?.data?.user;
+
+  const isLoggedIn =
+    user?._id && currentUserId && user._id === currentUserId;
+
+  if (!accessToken) {
+    return (
+      <div>
+        <h2>You are not logged in</h2>
+        <Link to="/login">Log in</Link>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return <p>Loading user...</p>;
+  }
+
+  if (isError || !isLoggedIn) {
+    return <Link to="/login">Log in</Link>;
+  }
+
+  return (
+    <StyledAppLayout>
+      <Header />
+      <Outlet />
+    </StyledAppLayout>
+  );
+}
+
+export default AppLayout;

@@ -1,0 +1,332 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ================= MAIN FILTER PANEL ================= */
+
+.filterSort {
+  min-width: min(80.0rem,80vw);
+  height: min(60.0rem,50vh);
+  margin: 5.0rem auto;
+  display: grid;
+  grid-template-columns: 1.5fr 3fr;
+  /* border: .1rem solid rgba(148, 163, 184, 0.25); */
+  border-radius: 1.6rem;
+
+  backdrop-filter: blur(1.8rem);
+  -webkit-backdrop-filter: blur(1.8rem);
+
+
+
+  position: relative;
+}
+
+/* ================= FILTER BUTTONS ================= */
+
+.filterItemButton {
+  height: 8.0rem;
+  font-size: 2.0rem;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.0rem;
+
+  background: transparent;
+  color: #0f172a;
+  border-radius: 1.0rem;
+  transition: all 0.1s ease;
+}
+
+.filterItemButton:hover {
+  background: rgba(99, 102, 241, 0.08);
+  box-shadow: 0 .4rem 1.2rem rgba(99, 102, 241, 0.15);
+}
+
+/* ACTIVE FEATURE */
+
+.activefeature {
+  background: linear-gradient(135deg, #6366f1, #4f46e5) !important;
+  color: white;
+  box-shadow: 0 .6rem 1.6rem rgba(99, 102, 241, 0.4);
+}
+
+/* ================= FILTER ITEMS ================= */
+
+.filterItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.0rem;
+  padding: 1.0rem;
+}
+
+.filterItems li:hover {
+  background: rgba(99, 102, 241, 0.06);
+}
+
+.svgicon {
+  width: 4.0rem;
+}
+
+/* ================= DATE FEATURES ================= */
+
+.dateFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 4.0rem;
+  align-items: stretch;
+}
+
+.previousDays {
+  display: flex;
+  padding-top: 2.0rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.0rem;
+}
+
+/* BUTTONS */
+
+.previousDaysButton,
+.distanceOption,
+.sortOption {
+  background: white;
+  border: .1rem solid rgba(148, 163, 184, 0.35);
+  color: #0f172a;
+
+  text-align: center !important;
+  border-radius: 1.0rem !important;
+
+  box-shadow: 0 .6rem 1.4rem rgba(15, 23, 42, 0.05);
+  transition: all 0.25s ease;
+}
+
+.previousDaysButton {
+  width: 40.0rem;
+  height: 6.0rem;
+  font-size: 2.5rem;
+}
+
+.distanceOption,
+.sortOption {
+  width: 30.0rem;
+  height: 4.0rem;
+  font-size: 2.5rem;
+}
+
+.previousDaysButton:hover,
+.distanceOption:hover,
+.sortOption:hover,
+.applyButton:hover {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  box-shadow: 0 1.0rem 2.2rem rgba(99, 102, 241, 0.45);
+}
+
+/* ================= RANGE INPUTS ================= */
+
+.daysRangeBoxes {
+  display: flex;
+  gap: 2.0rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+}
+
+.daysRangeBox1,
+.daysRangeBox2,
+.distanceInputText,
+.categorySelect {
+  width: 19.5rem;
+  height: 4.0rem;
+  font-size: 2.0rem;
+  border-radius: 1.0rem;
+  text-align: center;
+
+  background: white;
+  border: .1rem solid rgba(148, 163, 184, 0.35);
+  box-shadow: inset 0 .1rem .2rem rgba(15, 23, 42, 0.05);
+
+  color: #0f172a;
+}
+
+/* ================= PRICE RANGE ================= */
+
+.priceRange {
+  width: 30.0rem;
+  margin: 5.0rem auto;
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4.0rem;
+}
+
+.sliderBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.0rem;
+}
+
+.resultmin,
+.resultmax {
+  background: white;
+  border: .1rem solid rgba(148, 163, 184, 0.4);
+  width: 8.0rem;
+  border-radius: 1.2rem;
+  text-align: center;
+  align-self: end;
+  box-shadow: 0 .4rem 1.2rem rgba(15, 23, 42, 0.08);
+}
+
+/* ================= DISTANCE ================= */
+
+.distanceOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.distanceRange {
+  display: flex;
+  flex-direction: column;
+  padding: 3.0rem;
+  gap: 6.0rem;
+}
+
+.distanceInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.0rem;
+  font-size: 2.5rem;
+}
+
+.distanceInputBox {
+  width: 30.0rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.0rem;
+  font-size: 2.0rem;
+  font-weight: bold;
+}
+
+/* ================= CATEGORY ================= */
+
+.categoryBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10.0rem;
+  font-size: 2.5rem;
+  gap: 3.0rem;
+}
+
+.categories {
+  border-radius: .6rem !important;
+  height: 3.0rem;
+  margin-left: 1.0rem;
+}
+
+/* ================= SORT ================= */
+
+.sortOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6.0rem;
+  font-size: 2.5rem;
+}
+
+.sortOptionsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+/* ================= APPLY BUTTON ================= */
+
+.applyButton {
+  position: absolute;
+  width: 9.0rem;
+  height: 4.2rem;
+  border-radius: 1.0rem;
+  bottom: 2.0rem;
+  right: 3.0rem;
+
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  font-weight: bold;
+
+  box-shadow: 0 1.2rem 2.4rem rgba(99, 102, 241, 0.45);
+  transition: all 0.25s ease;
+}
+
+/* ================= REACT SELECT MODERN ================= */
+
+.mySelect__control {
+  background: white;
+  border: .1rem solid rgba(148, 163, 184, 0.35);
+  border-radius: 1.0rem;
+  min-height: 4.0rem;
+  font-size: 1.4rem;
+  box-shadow: 0 .2rem .6rem rgba(15, 23, 42, 0.05);
+}
+
+.mySelect__control--is-focused {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 .3rem rgba(99, 102, 241, 0.15);
+}
+
+.mySelect__menu {
+  z-index: 1000;
+  border-radius: 1.2rem;
+  box-shadow: 0 2.0rem 4.0rem rgba(15, 23, 42, 0.12);
+}
+
+.mySelect__option--is-focused {
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.mySelect__option--is-selected {
+  background: #6366f1;
+  color: white;
+}
+
+.closebutton{
+    width: fit-content;
+    background: none;
+    color: black;
+    fill: transparent;
+    background-color: none;
+    border: none;
+    position: absolute;
+    right: 3rem;
+    top: -3rem;
+    transition: all 0s ease;
+}
+
+.closebutton .svgicon{
+    width: 3rem;
+}
+
+.closebutton:hover{
+    transform: scale(1.1);
+    color: #4f46e5;
+}
+

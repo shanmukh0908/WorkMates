@@ -1,0 +1,223 @@
+/* Container */
+.signUpContainer {
+  margin-top: 3%;
+  padding: 1%;
+  align-self: center;
+  justify-self: center;
+  width: min(60rem,80%);
+  display: flex;
+  flex-direction: column;
+  gap: min(1rem,1%);
+  height: max-content;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 2rem;
+}
+
+/* Logo */
+.logoImage {
+  width: 10rem;
+  filter: drop-shadow(0 4px 10px rgba(79, 70, 229, 0.25));
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.logoName {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #6366f1;
+}
+
+.signupform{
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+
+/* Input Box */
+.inputBox {
+  margin-bottom: 2.0rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputBox label {
+  margin-bottom: .6rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.addressBox{
+  max-width:80%;
+}
+
+.addressInput{
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Textarea */
+.taskDescription {
+  padding: 1.0rem;
+  font-size: 1.4rem;
+  border-radius: .6rem;
+  border: .1rem solid #ccc;
+  resize: vertical;
+  min-height: 8.0rem;
+}
+
+/* File Input */
+.taskImages {
+  border: .1rem solid #ccc;
+  padding: .6rem;
+  border-radius: .6rem;
+}
+
+/* Number Input */
+.amountOffered {
+  padding: 1.0rem;
+  border-radius: .6rem;
+  border: .1rem solid #ccc;
+  font-size: 1.4rem;
+}
+
+/* Checkbox */
+.negotiable {
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-top: .4rem;
+}
+
+/* Location Input */
+.locationBox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.0rem;
+}
+
+.locationInput {
+  padding: 1.0rem;
+  border-radius: .6rem;
+  border: .1rem solid #ccc;
+  font-size: 1.4rem;
+  margin-bottom: 1.0rem;
+}
+
+.locationButton {
+  width: fit-content;
+  padding: .8rem 1.6rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: .6rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.profilePhotoBox{
+  display: flex;
+  gap: 10rem;
+}
+
+.imagePreviewContainer {
+  margin-top: 10px;
+}
+
+.imagePreview {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10%;
+  border: 2px solid #ddd;
+}
+
+.locationButton:hover {
+  background-color: #0056b3;
+}
+
+.profilePhotoSelect{
+  align-self: center;
+  justify-self: center;
+  display: block;
+  width: 10rem;
+  height: max-content;
+  font-size: 1.5rem;
+}
+
+/* CreatableSelect (react-select) */
+/* .mySelect__control {
+  border: .1rem solid #ccc;
+  border-radius: .6rem;
+  min-height: 4.0rem;
+  font-size: 1.4rem;
+}
+
+.mySelect__control--is-focused {
+  border-color: #007bff;
+  box-shadow: 0 0 0 .1rem #007bff;
+}
+
+.mySelect__menu {
+  z-index: 1000;
+}
+
+.mySelect__option--is-focused {
+  background-color: #f0f0f0;
+}
+
+.mySelect__option--is-selected {
+  background-color: #007bff;
+  color: white;
+} */
+/* Error messages */
+.error {
+  color: #d9534f;
+  font-size: 1.3rem;
+  margin-top: .4rem;
+}
+
+/* Submit Button */
+.signUpButton {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: .6rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.signUpButton:hover {
+  background-color: #218838;
+}
+
+.nameBox,.emailBox,.passwordBox,.passwordBox {
+display: flex;
+justify-content: space-between;
+}
+
+
+/* Responsive */
+@media (max-width: 64.0rem) {
+  .formContainer {
+    padding: 2.0rem;
+  }
+  .logoName {
+    font-size: 2.0rem;
+  }
+}

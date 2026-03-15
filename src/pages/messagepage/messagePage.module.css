@@ -1,0 +1,215 @@
+.messagebox {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  width: 90%;
+  /* max-width: 600px; */
+  height: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #f5f7fa;
+  border: 1px solid #e1e5eb;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Chat messages container */
+.chatBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 3% 2%;
+  list-style: none;
+  width: 100%;
+}
+
+/* Each message bubble */
+.messageText {
+  display: inline-block;
+  padding: 2 1rem;
+  border-radius: 18px;
+  background-color: #fff;
+  /* align-self: flex-start; */
+  max-width: 70%;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: #222;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+}
+
+.messageRow {
+  display: flex;
+}
+
+
+/* For messages sent by the user (optional — if you differentiate sender) */
+.messageText.sent {
+  background-color: #dcf8c6;
+  margin-left: auto;
+}
+
+/* Task request message container */
+.taskRequestMessageBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: #fff5d6;
+  border: 1px solid #ffe08a;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Accept button */
+.AcceptButton {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.TaskAssignedAlready{
+  background-color: #a1a728;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.AcceptButton:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.AcceptButton:active {
+  transform: translateY(0);
+}
+
+/* Loading text */
+.loadingText {
+  text-align: center;
+  color: #555;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.chatInputBox{
+  margin-top: auto;
+  position: relative;
+}
+
+.sendingText{
+  width: 90%;;
+  height: 4em;
+  font-size: 20px;
+  line-height: 24px;
+  color: black;
+  background-color: white;
+  caret-color: auto;
+  pointer-events: auto;
+}
+
+input:focus {
+  caret-color:auto;
+  outline: 1px solid dodgerblue;
+}
+
+.sendIcon {
+  fill: grey;
+  width: 2.5%;
+  position: absolute;
+  top: 50%;
+  left: 95%;
+  transform: translateY(-50%);
+}
+
+.occupyFullView{
+ 
+}
+
+.hideMessage{
+}
+
+.closeButton {
+  
+  display: none;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.closeButton:active {
+  transform: scale(0.95);
+}
+
+/* SVG icon */
+.Xmark {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: #374151; /* neutral dark gray */
+}
+
+
+@media(max-width :450px){
+  
+  .messagebox{
+    width: 100%;
+    height: auto;
+    align-self: center;
+    justify-self: center;
+    padding: 3% 6%;
+    font-size: 2rem;
+  }
+
+  .closeButton{
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 3.6rem;
+  height: 3.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+
+  cursor: pointer;
+  padding: 0;
+
+  transition: background 0.2s ease, transform 0.15s ease;
+
+  }
+
+  .hideMessage{
+  display: none !important;
+}
+
+}
+
+/* Scrollbar styling (nice subtle look)
+.messagebox::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messagebox::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+} */

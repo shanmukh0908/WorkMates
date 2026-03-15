@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+
+.tasksBox{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(244, 243, 241);
+}
+
+.taskStatusBox{
+    display: flex;
+    justify-content: center;
+    gap: 4.0rem;
+    padding-top: 3.0rem;
+}
+
+.finishedtaskButton,.upcomingTasksButton,.savedTasksButton{
+  width: max-content;
+  padding: 2rem;
+  border-radius: .6rem;
+  background: none;
+  font-size: 2.0rem;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.finishedtaskButton:hover,.upcomingTasksButton:hover,.savedTasksButton:hover{
+  transform: scale(1.12);
+}
+
+.finishedtaskButton {
+  background-color: #10b981;
+}
+
+.upcomingTasksButton {
+  background-color: #3b82f6;
+}
+
+.savedTasksButton {
+  background-color: #f59e0b;
+}
+
+/* .taskList{
+    padding-top: 4.0rem;
+    padding-left: 14.0rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 20.0rem 20.0rem 20.0rem ;
+    column-gap: 4.0rem;
+    row-gap: 4.0rem;
+} */
+
+.taskList {
+
+    margin-top: min(10rem,10vw);
+    width: min(120rem,80%);
+    padding-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    display: grid;
+    grid-template-columns:  repeat(3,1fr);
+    grid-template-rows:  repeat(3,1fr);
+    list-style: none;
+    column-gap: 2.0rem;
+    row-gap: 2.0rem;
+    justify-content: center;
+    align-content: center;
+    border: .1rem solid #E2E8F0;
+    border-radius: 1.2rem;
+    align-self: center;
+    /* overflow: scroll; */
+}
+
+.taskListItem {
+  align-self: center;
+  justify-self: center;
+  background-color: #FFFFFF;
+  color: #1E293B;
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  padding: 1.6rem;
+  box-shadow: 0 .2rem .8rem rgba(0,0,0,0.2);
+  transition: all 0.4s;
+  position: relative;
+  width: 80%;
+  /* padding: 10%; */
+}
+
+.SaveIcon {
+  width: 3.0rem;
+  position: absolute;
+  top: 9.5rem;
+  left: 25.0rem;
+  cursor: pointer; /* optional: makes it clear it’s clickable */
+  transition: background-color 0.3s; /* smooth hover effect */
+}
+
+.SaveIcon:hover {
+  stroke: #2563EB; /* highlight border only */
+}
+
+.saved{
+  fill:goldenrod;
+}
+
+.taskListItem:hover{
+  transform: translateY(.5rem);
+  box-shadow: 0 3..2rem 10..4rem rgba(0, 0, 0, 0.3);
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.userImg {
+  width: 6.0rem;
+  height: 6.0rem;
+  border-radius: 50%;
+  padding: .4rem;
+  border: .2rem solid #2563EB; /* Blue accent */
+}
+
+.userName {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1E293B;
+}
+
+.svgicon{
+  transition: all 0.4s;
+}
+
+.svgicon:hover{
+  transform:scale(1.2,1.2);
+  color:#2a58a2;
+}
+
+.pagination{
+  position: absolute;
+  bottom: 5.0rem;
+}
+
+.active1 {
+  transform: scale(1.2);
+  box-shadow:
+    0 0 .8rem rgba(16, 185, 129, 0.6),
+    0 0 1.6rem rgba(16, 185, 129, 0.4),
+    0 0 2.4rem rgba(16, 185, 129, 0.25);
+}
+
+.active2 {
+  transform: scale(1.2);
+  box-shadow:
+    0 0 .8rem rgba(59, 130, 246, 0.6),
+    0 0 1.6rem rgba(59, 130, 246, 0.4),
+    0 0 2.4rem rgba(59, 130, 246, 0.25);
+}
+
+.active3 {
+  transform: scale(1.2);
+  box-shadow:
+    0 0 .8rem rgba(245, 158, 11, 0.6),
+    0 0 1.6rem rgba(245, 158, 11, 0.4),
+    0 0 2.4rem rgba(245, 158, 11, 0.25);
+}
+
+@media (max-width: 945px) {
+  .taskList {
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+}
+  }

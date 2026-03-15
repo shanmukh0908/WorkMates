@@ -1,0 +1,288 @@
+/* ================= RESET ================= */
+
+/* ================= RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= COLOR TOKENS ================= */
+
+:root {
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-soft: rgba(255, 255, 255, 0.65);
+  --border-soft: rgba(99, 102, 241, 0.18);
+
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --accent: #2563EB;
+
+  --highlight: #FACC15;
+}
+
+/* ================= MAIN CONTAINER ================= */
+
+.taskBox {
+  width: 92%;
+  /* max-width: 50vw; */
+  margin: 3rem auto;
+  padding: 3rem 2.5rem;
+  border-radius: 1.75rem;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(224, 231, 255, 0.75) 100%
+  );
+
+  box-shadow:
+    0 2rem 4rem rgba(79, 70, 229, 0.15),
+    inset 0 0 0 1px rgba(99, 102, 241, 0.18);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+
+  color: var(--text-primary);
+}
+
+/* ================= USER SECTION ================= */
+
+.user {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.userImg {
+  width: 11rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* ================= DESCRIPTION ================= */
+
+.descriptionBox {
+  width: 100%;
+  /* max-width: 72rem; */
+  font-size: 1.4rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.description {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ================= SAVE ICON ================= */
+
+.SaveIcon {
+  width: 1.8rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  stroke: var(--primary);
+  transition: transform 0.2s ease;
+}
+
+.SaveIcon:hover {
+  transform: scale(1.2);
+}
+
+.saved {
+  fill: var(--highlight);
+}
+
+/* ================= TASK IMAGES GRID ================= */
+
+.taskImages {
+  width: 100%;
+  /* max-width: 72rem; */
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 2.5rem;
+  border-radius: 1rem;
+  background: var(--surface-soft);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border-soft);
+}
+
+/* ================= IMAGE CARD ================= */
+
+.imageBox {
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+  /* gap: 0.75rem; */
+  background-color: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+  transition: transform 0.3s ease;
+}
+
+.imageBox:hover {
+  transform: translateY(-0.4rem);
+}
+
+.imageBox img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.iamgeDescription {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+/* ================= TOOLS SECTION ================= */
+
+.haveTools {
+  width: 100%;
+  max-width: 72rem;
+  padding: 1.5rem;
+  font-size: 1.4rem;
+  border-radius: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+}
+
+.toolsBox {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.toolsBox p {
+  padding: 0.5rem 1rem;
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--primary);
+  border-radius: 999px;
+  font-size: 1rem;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+/* ================= PRICE SECTION ================= */
+
+.priceBox {
+  width: 100%;
+  /* max-width: 72rem; */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.3rem;
+}
+
+.priceBox label {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.amountNegotiable {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+/* ================= BUTTONS ================= */
+
+.buttonBox {
+  display: flex;
+  gap: 1rem;
+}
+
+.save,
+.interseted,
+.submitRequestButton,
+.markAsCompleteButton {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #ffffff;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.save:hover,
+.interseted:hover,
+.submitRequestButton:hover,
+.markAsCompleteButton:hover {
+  background: linear-gradient(135deg, var(--primary-hover), var(--primary));
+  transform: translateY(-2px);
+  box-shadow: 0 0.75rem 1.5rem rgba(79, 70, 229, 0.4);
+}
+
+/* ================= MESSAGE SECTION ================= */
+
+.messageBox {
+  width: 100%;
+  /* max-width: 72rem; */
+  padding: 2rem;
+  border-radius: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.08);
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.yourOfferPrice {
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  margin-left: 2rem;
+}
+
+.yourMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message {
+  width: 100%;
+  height: 10rem;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+

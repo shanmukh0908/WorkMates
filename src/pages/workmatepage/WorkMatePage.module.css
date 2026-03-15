@@ -1,0 +1,135 @@
+.workmatecontainer {
+    max-width: 42.0rem;
+    margin: 4.0rem auto;
+    padding: 3.2rem;
+    background: #ffffff;
+    border-radius: 2.0rem;
+    box-shadow: 0 .6rem 2.0rem rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.8rem;
+    font-family: "Inter", sans-serif;
+  }
+  
+  .userImg {
+    width: 15.0rem;
+    height: 15.0rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 .4rem 1.4rem rgba(0, 0, 0, 0.12);
+  }
+  
+  .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.0rem;
+    margin-top: -1.0rem;
+  }
+  
+  .label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .rating {
+    display: flex;
+    gap: .4rem;
+  }
+  
+  .star {
+    color: #d1d1d1;        /* empty star color */
+    font-size: 2.8rem;       /* star size */
+  }
+  
+  .filledStar {
+    color: #ffc107;        /* filled star color */
+    font-size: 2.8rem;       /* same size */
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+  }
+  .skillsBox {
+    width: 100%;
+    background: #f9fafb;
+    border-radius: 1.6rem;
+    padding: 1.8rem 2.0rem;
+  }
+  
+  .skillsBox p {
+    margin-bottom: .8rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .skillsList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.0rem;
+    padding: 0;
+  }
+  
+  .skill {
+    background: #e7f1ff;
+    padding: .6rem 1.4rem;
+    border-radius: 1.4rem;
+    font-size: 1.3rem;
+    color: #0053b8;
+    font-weight: 500;
+    box-shadow: 0 .2rem .6rem rgba(0, 0, 0, 0.06);
+  }
+  
+  .container{
+    display: flex;
+    flex-direction: column;
+    gap: 3.0rem;
+    grid-column: 1 / -1;
+  }
+
+  .messageBox {
+    width: 100%;
+    margin-top: 1.5rem;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 2.0rem;
+  }
+
+  .sendButton{
+    width: fit-content;
+    padding: 1.0rem;
+    font-size:1.5rem;
+  }
+  
+  .message {
+    width: 100%;
+    max-width: 50.0rem;
+    height: 13.0rem;
+    padding: 1.2rem 1.6rem;
+    font-size: 1rem;
+    border: 1..5rem solid #d0d0d0;
+    border-radius: 1.2rem;
+    resize: none;
+    outline: none;
+    color: #333;
+    background: #fafafa;
+    transition: all 0.2s ease;
+  }
+  
+  /* On focus */
+  .message:focus {
+    border-color: #4a90e2;
+    background: #fff;
+    box-shadow: 0 0 .6rem rgba(74, 144, 226, 0.3);
+  }
+  
+  /* Placeholder */
+  .message::placeholder {
+    color: #999;
+  }

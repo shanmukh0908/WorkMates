@@ -1,0 +1,118 @@
+/* User Profile Image */
+.userImg {
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+
+  padding: 0.2rem;
+  border: 2px solid #2563eb;
+
+  object-fit: cover;
+}
+
+/* User Menu Container */
+.userBox {
+  width: min(90vw, 22rem);
+  max-height: 75vh;
+
+  position: fixed;
+  top: 6.5rem;
+  right: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  padding: 1.5rem;
+
+  background: rgba(255, 255, 255);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 1rem;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+
+  z-index: 1000;
+
+  animation: fadeSlide 0.25s ease-out;
+}
+
+/* Entrance animation */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Menu Buttons */
+.yourTasks,
+.yourMessages,
+.cancelledTasks {
+  width: 100%;
+  height: 3rem;
+
+  border-radius: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.yourTasks:hover,
+.yourMessages:hover,
+.cancelledTasks:hover {
+  background: #f0f3ff;
+  color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Logout Button */
+.logoutButton {
+  margin-top: 0.5rem;
+
+  padding: 0.5rem 1.25rem;
+
+  border-radius: 0.75rem;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.1);
+
+  color: #ef4444;
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logoutButton:hover {
+  background: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  .userBox {
+    right: 0.75rem;
+    left: 0.75rem;
+    width: auto;
+  }
+}

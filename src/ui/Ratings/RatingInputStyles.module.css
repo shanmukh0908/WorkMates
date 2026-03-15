@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Empty Stars */
+.emptyStar {
+  font-size: 32px;
+  color: #d1d5db; /* light gray */
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+/* Filled Stars */
+.fullStar {
+  font-size: 32px;
+  color: #ffb400; /* beautiful gold yellow */
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+/* Hover effect */
+.emptyStar:hover,
+.fullStar:hover {
+  transform: scale(1.15);
+  color: #ffa500; /* brighter gold on hover */
+}
+
+/* Text */
+.text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+}
+
+.submitRatingButton{
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #ffffff;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
