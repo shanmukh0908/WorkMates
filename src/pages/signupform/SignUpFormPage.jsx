@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import styles from "./SignUpFormPage.module.css";
 import { useEffect, useState } from "react";
 import { getCurrentLocation} from '../../services/apis/GeoLocationApi'
-import signUp from "../../services/apis/signup";
+import signUp from "../../services/apis/signUp";
 import { useNavigate } from "react-router-dom";
 
 
