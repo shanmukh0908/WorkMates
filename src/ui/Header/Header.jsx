@@ -11,7 +11,7 @@ import {
   showNoModel,
 } from "../../features/header/headerslice";
 import { setWorkMate, setNormalUser } from "../../features/userType/userTypeSlice";
-import UserModal from "./userModal";
+import UserModal from "./UserModal";
 import NotificationModal from "./NotificationModal";
 import { queryClient } from "../../services/apis/queryClient";
 
