@@ -1,6 +1,6 @@
 
 import { queryClient } from "../../services/apis/queryClient";
-import CreateWorkMateFormPage from "../workmatespage/createWorkMateFormPage";
+import CreateWorkMateFormPage from "../workmatespage/CreateWorkMateFormPage";
 import styles from "./HomePage.module.css";
 
 export default function HomePageForWorkMate({ children }) {
