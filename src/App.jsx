@@ -8,7 +8,6 @@ const TasksPage = lazy(() => import("./pages/tasks/TasksPage.jsx"));
 const Errorpage = lazy(() => import("./errors/Errorpage.jsx"));
 const WorkItemPage = lazy(() => import("./pages/workitempage/WorkItemPage.jsx"));
 const YourTasksPage = lazy(() => import("./pages/yourtaskspage/YourTasksPage.jsx"));
-// const NotificationsPage = lazy(() => import("./pages/notifications/NotificationsPage.jsx"));
 const ProfilePage = lazy(() => import("./pages/profile/ProfilePage.jsx"));
 const SettingsPage = lazy(() => import("./pages/settings/SettingsPage.jsx"));
 const ProfileSettingsPage = lazy(() => import("./pages/settings/profilesettings/ProfileSettingsPage.jsx"));
@@ -17,7 +16,7 @@ const NotificationSettingsPage = lazy(() => import("./pages/settings/notificatio
 const VisibilitySettingsPage = lazy(() => import("./pages/settings/visibilitysettings/VisibilitySettingsPage.jsx"));
 const SignUpFormPage = lazy(() => import("./pages/signupform/SignUpFormPage.jsx"));
 const LogInFormPage = lazy(() => import("./pages/loginformpage/LogInFormPage.jsx"));
-const MessagePage = lazy(() => import("./pages/messagepage/messagePage.jsx"));
+const MessagePage = lazy(() => import("./pages/messagepage/MessagePage.jsx"));
 const AllMessagesPage = lazy(() => import("./pages/messagepage/AllMessagesPage.jsx"));
 const CreateWorkMateFormPage = lazy(() => import("./pages/workmatespage/createWorkMateFormPage.jsx"));
 const CreateTaskFormPage = lazy(() => import("./pages/tasks/CreateTaskFormPage.jsx"));
