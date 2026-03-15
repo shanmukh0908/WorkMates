@@ -56,8 +56,10 @@ body {
 }
 
 .nearbyTasksButton {
-  min-width: 30rem;
+  min-width: max-content;
 }
+
+
 
 .nearbyTasksButton:hover {
   background-color: rgba(37, 99, 235, 0.15);
