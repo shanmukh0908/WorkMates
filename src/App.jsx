@@ -19,13 +19,12 @@ const SignUpFormPage = lazy(() => import("./pages/signupform/SignUpFormPage.jsx"
 const LogInFormPage = lazy(() => import("./pages/loginformpage/LogInFormPage.jsx"));
 const MessagePage = lazy(() => import("./pages/messagepage/messagePage.jsx"));
 const AllMessagesPage = lazy(() => import("./pages/messagepage/AllMessagesPage.jsx"));
-const MobileMessages = lazy(() => import("./pages/messagepage/MobileMessages.jsx"));
 const CreateWorkMateFormPage = lazy(() => import("./pages/workmatespage/createWorkMateFormPage.jsx"));
 const CreateTaskFormPage = lazy(() => import("./pages/tasks/CreateTaskFormPage.jsx"));
 const WorkMatesPage = lazy(() => import("./pages/workmatespage/WorkMatesPage.jsx"));
 const WorkMatePage = lazy(() => import("./pages/workmatepage/WorkMatePage.jsx"));
 
-import { savedTasksLoader } from "./pages/tasks/savedTasksLoader.js";
+import { savedTasksLoader } from "./pages/tasks/SavedTasksLoader.js";
 import { getCurrentLocation } from "./services/apis/GeoLocationApi.js";
 import { HomePageLoader } from "./pages/homepage/HomePageLoader.js";
 
