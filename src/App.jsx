@@ -18,7 +18,7 @@ const SignUpFormPage = lazy(() => import("./pages/signupform/SignUpFormPage.jsx"
 const LogInFormPage = lazy(() => import("./pages/loginformpage/LogInFormPage.jsx"));
 const MessagePage = lazy(() => import("./pages/messagepage/MessagePage.jsx"));
 const AllMessagesPage = lazy(() => import("./pages/messagepage/AllMessagesPage.jsx"));
-const CreateWorkMateFormPage = lazy(() => import("./pages/workmatespage/createWorkMateFormPage.jsx"));
+const CreateWorkMateFormPage = lazy(() => import("./pages/workmatespage/CreateWorkMateFormPage.jsx"));
 const CreateTaskFormPage = lazy(() => import("./pages/tasks/CreateTaskFormPage.jsx"));
 const WorkMatesPage = lazy(() => import("./pages/workmatespage/WorkMatesPage.jsx"));
 const WorkMatePage = lazy(() => import("./pages/workmatepage/WorkMatePage.jsx"));
