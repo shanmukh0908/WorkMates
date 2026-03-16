@@ -1,4 +1,6 @@
-export default function DistanceFeatures({dispatch,styles,state}){
+import styles from "./workMatesFilter.module.css"
+
+export default function DistanceFeatures({dispatch,state}){
     return(
         <div className={styles.distanceRange}>
           <div className={styles.distanceOptions} >

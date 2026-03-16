@@ -1,6 +1,7 @@
 import { BanknotesIcon,MapIcon,ListBulletIcon,ArrowsUpDownIcon } from "@heroicons/react/24/outline";
+import styles from "./workMatesFilter.module.css"
 
-export default function FilterSortButtonBox({dispatch,styles,state}){
+export default function FilterSortButtonBox({dispatch,state}){
 
     return(
         <div className={styles.filterItems}>

@@ -3,20 +3,12 @@
 
 import styles from "./WorkItemPage.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
-// import { DocumentPlusIcon } from "@heroicons/react/24/outline";
 import getUserIdFromToken from "../../services/apis/getUserIdFromToken";
 import { useForm } from "react-hook-form";
-import {useDispatch } from "react-redux";
-
-// import postMessage from "../../services/apis/postMessage"
 import usePostMessage from "../../hooks/messages/usePostMesaage";
-// import updateTask from "../../services/apis/updateTask";
 import useUpdateTask from "../../hooks/tasks/useUpdateTask";
 import RatingInput from "../../ui/Ratings/RatingInput";
-
 import SavedTasks from "../tasks/SavedTasks";
-// import createNotification from "../../services/apis/createNotification";
-
 import useSendNotification from "../../hooks/notifications/useSendNotification";
 
 export default function WorkItemPage() {
@@ -86,7 +78,7 @@ async function onSubmit(formData) {
     toId = task?.createdBy?._id;
   }
 
-  // ✅ Perform the first update
+  // Perform the first update
   updateTask({ taskId: task._id, payload }, {
     onSuccess: () => {
       // This only runs after the database successfully updates
@@ -95,7 +87,7 @@ async function onSubmit(formData) {
         toId,
       });
 
-      // ✅ Check for final completion
+      // Check for final completion
       // We check our CURRENT payload + the existing task state
       const isNowComplete = 
         (payload.markedAsCompleteByCreatedBy && task?.markedAsCompleteByAcceptedBy) || 

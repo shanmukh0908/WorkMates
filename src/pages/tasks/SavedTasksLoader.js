@@ -5,9 +5,9 @@ import getUserIdFromToken from "../../services/apis/getUserIdFromToken";
 
 export async function savedTasksLoader() {
   const uid = getUserIdFromToken()
-  // 👇 no hook here — queryClient comes from argument
+  console.log("uid from loader" ,uid)
   const tasks = await queryClient.ensureQueryData({
-    queryKey: ["savedtasks",uid],
+    queryKey: ["savedtasks"],
     queryFn: getSavedTasks,
   });
 

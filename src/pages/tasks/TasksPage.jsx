@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {styled,css} from "styled-components";
 import { useSearchParams } from "react-router-dom";
-// import { useSelector,shallowEqual } from "react-redux";
+
 
 import {AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 
@@ -34,24 +34,16 @@ const TaskContainer = styled.div`
     showoverlay && css`
       &::before {
         content: "";
-        position: fixed; /* Use 'absolute' to contain it to this div */
+        position: fixed;
         inset: 0;
         background-color: rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(6px);
-        background-color: rgba(255, 255, 255, 0.1); // Slight tint helps the blur pop
+        background-color: rgba(255, 255, 255, 0.1); 
         z-index: 10; 
       }
     `}
 
-    /* &::before {
-        content: "";
-        position: fixed; /* Use 'absolute' to contain it to this div */
-        /* inset: 0;
-        background-color: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(6px);
-        z-index: 10;  */
-      /* } */ 
-
+  
     
 `;
 
@@ -116,7 +108,7 @@ const [filters,setFilters] = useState({})
       <ul className={styles.taskList}>
         {filtertaskdata.slice(startIndex,endIndex).map((task, index) => (
           <li key={index} className={styles.taskListItem} onClick={()=>navigate("/tasks/123", { state: {task} })}>
-          {/* <li key={index} className={styles.taskListItem} onClick={()=>navigate("/tasks/123", { state: { task,saved:activeSavedTasks.includes(task._id) } })}> */}
+          
             <div className={styles.user}>
               <img src={
                 task?.createdBy?.profilePhoto ? 
@@ -130,11 +122,6 @@ const [filters,setFilters] = useState({})
             <p>{task?.distanceFromUser || "100"} km</p>
             <p>Category: {task?.category || "abc"}</p>
             <SavedTasks styles = {styles} task={task} /> 
-            {/* <DocumentPlusIcon className={activeSavedTasks?.includes(task._id) ? `${styles.SaveIcon} ${styles.saved}`: styles.SaveIcon}
-            onClick={(e) =>{
-              e.stopPropagation();
-              handleSaveClick(task._id)
-              }}/> */}
           </li>
         ))}
       </ul> </div>: filtertaskdata?.length > 0  ? <h1>LOADING...</h1>  : 

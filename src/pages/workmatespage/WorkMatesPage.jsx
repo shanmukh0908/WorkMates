@@ -21,7 +21,6 @@ const WorkMatesContainer = styled.div`
   padding-top: min(10%, 7rem);
   row-gap: 4rem;
   
-  /* Required if you want the overlay to stay within this container */
   position: relative; 
 
   ${({ showoverlay }) =>
@@ -29,11 +28,11 @@ const WorkMatesContainer = styled.div`
     css`
       &::before {
         content: "";
-        position: fixed; /* Use 'absolute' to contain it to this div */
+        position: fixed; 
         inset: 0;
         background-color: rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(6px);
-        background-color: rgba(255, 255, 255, 0.1); // Slight tint helps the blur pop
+        background-color: rgba(255, 255, 255, 0.1); 
         z-index: 10; 
       }
     `}

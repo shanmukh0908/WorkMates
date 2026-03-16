@@ -9,7 +9,7 @@ import FilterSortButtonBox from "./WorkMatesFilterSortButtonBox";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 // import useGetAllWorkMates from "../../hooks/workMates/useGetAllWorkMates";
 
-export default function WorkMatesFilter({ setFilterDisplay,setFilters,filters }) {
+export default function WorkMatesFilter({ setFilterDisplay,setFilters }) {
   const initialState = {
     distance: 100000,
     skills: null,
@@ -87,7 +87,7 @@ export default function WorkMatesFilter({ setFilterDisplay,setFilters,filters })
         Apply
       </button>
 
-      <FilterSortButtonBox dispatch={dispatch} styles={styles} state={state} />
+      <FilterSortButtonBox dispatch={dispatch}  state={state} />
       
       <button className={styles.closebutton} onClick={()=>{setFilterDisplay(false)}}>
             <XMarkIcon className={styles.svgicon} />
@@ -95,15 +95,15 @@ export default function WorkMatesFilter({ setFilterDisplay,setFilters,filters })
 
       <div className={styles.filterItemFeatures}>
         {state?.display?.displayproximityfilter && (
-          <DistanceFeatures dispatch={dispatch} styles={styles} state={state} />
+          <DistanceFeatures dispatch={dispatch}  state={state} />
         )}
 
         {state?.display?.displaycategoryfilter && (
-          <CategoryFeatures dispatch={dispatch} styles={styles} state={state} />
+          <CategoryFeatures dispatch={dispatch}  state={state} />
         )}
 
         {state?.display?.displaysortby && (
-          <SortFeatures dispatch={dispatch} styles={styles} state={state} />
+          <SortFeatures dispatch={dispatch}  state={state} />
         )}
       </div>
     </div>

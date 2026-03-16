@@ -1,4 +1,6 @@
-export default function SortFeatures({dispatch,styles,state}){
+import styles from "./workMatesFilter.module.css"
+
+export default function SortFeatures({dispatch,state}){
     return (
         <div className={styles.sortOptions}>
                   <p className={styles.sortOptionsText}>SORT BY</p>

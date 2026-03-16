@@ -25,16 +25,18 @@
   color: #6366f1;
 }
 
-/* Filter dropdown */
 .FilterBox {
-  position: absolute;
-  top: 7.2rem;
-  left: 33rem;
-  z-index: 20;
+  position: fixed; 
+  
+  top: 50%;
+  left: 50%;
+  
+  
+  transform: translate(-50%, -50%);
 
+  z-index: 20;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(1.4rem);
-
   border-radius: 1.6rem;
   box-shadow: 0 1.6rem 3.2rem rgba(15, 23, 42, 0.12);
   border: 0.1rem solid rgba(99, 102, 241, 0.12);

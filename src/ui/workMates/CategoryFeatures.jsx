@@ -1,8 +1,9 @@
 import categories from "../../../categories"
 import { useEffect, useState } from "react";
 import CreatableSelect from "react-select/creatable";
+import styles from "./workMatesFilter.module.css"
 
-export default function CategoryFeatures({dispatch,styles,state}){
+export default function CategoryFeatures({dispatch,state}){
 
   const [categoryOptions, setCategoryOptions] = useState([]);
 

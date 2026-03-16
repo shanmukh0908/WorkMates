@@ -197,12 +197,7 @@ input.amountOffered {
 }
 
 /* ================= REACT SELECT ================= */
-/* 
-.mySelect{
-  font-size: 1.5rem !important;
-  height: 1rem !important;
 
-} */
 
 :global(.mySelect__control) {
   min-height: 36px;

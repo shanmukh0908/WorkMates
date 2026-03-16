@@ -1,5 +1,13 @@
+
+ .container{
+    display: flex;
+    flex-direction: column;
+    gap: 3.0rem;
+    grid-column: 1 / -1;
+  }
+
 .workmatecontainer {
-    max-width: 42.0rem;
+    width: 30%;
     margin: 4.0rem auto;
     padding: 3.2rem;
     background: #ffffff;
@@ -20,13 +28,6 @@
     box-shadow: 0 .4rem 1.4rem rgba(0, 0, 0, 0.12);
   }
   
-  .wrapper {
-    display: flex;
-    align-items: center;
-    gap: 1.0rem;
-    margin-top: -1.0rem;
-  }
-  
   .label {
     font-size: 1.5rem;
     font-weight: 600;
@@ -39,13 +40,13 @@
   }
   
   .star {
-    color: #d1d1d1;        /* empty star color */
-    font-size: 2.8rem;       /* star size */
+    color: #d1d1d1;       
+    font-size: 2.8rem;       
   }
   
   .filledStar {
-    color: #ffc107;        /* filled star color */
-    font-size: 2.8rem;       /* same size */
+    color: #ffc107;    
+    font-size: 2.8rem;     
   }
   
   .rating {
@@ -53,6 +54,7 @@
     align-items: center;
     gap: .4rem;
   }
+  
   .skillsBox {
     width: 100%;
     background: #f9fafb;
@@ -84,16 +86,13 @@
     box-shadow: 0 .2rem .6rem rgba(0, 0, 0, 0.06);
   }
   
-  .container{
-    display: flex;
-    flex-direction: column;
-    gap: 3.0rem;
-    grid-column: 1 / -1;
-  }
+ 
 
   .messageBox {
-    width: 100%;
+    width: 50vw;
     margin-top: 1.5rem;
+    align-self: center;
+    justify-self: center;
     display: flex; 
     flex-direction: column; 
     justify-content: center;
@@ -109,17 +108,17 @@
   
   .message {
     width: 100%;
-    max-width: 50.0rem;
     height: 13.0rem;
     padding: 1.2rem 1.6rem;
     font-size: 1rem;
-    border: 1..5rem solid #d0d0d0;
+    border: none;
     border-radius: 1.2rem;
     resize: none;
     outline: none;
     color: #333;
     background: #fafafa;
     transition: all 0.2s ease;
+     box-shadow: 0 0 .6rem rgba(1, 5, 9, 0.3);
   }
   
   /* On focus */
@@ -132,4 +131,15 @@
   /* Placeholder */
   .message::placeholder {
     color: #999;
+  }
+
+  @media (max-width: 515px){
+
+    .workmatecontainer {
+          width: 60vw;
+        }
+
+    .messageBox {
+    width: 60vw;
+      }
   }

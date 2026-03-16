@@ -1,44 +1,66 @@
 import api from "./axios";
+import axios from "axios";
 
 const createTask = async function (taskData, files) {
-  console.log(taskData,"///***---",files)
-  const formData = new FormData();
-  formData.append("status", "open");
-  formData.append("category", taskData.category);
-  formData.append("taskDescription", taskData.taskDescription);
-  formData.append("negotiable", taskData.negotiable);
-  formData.append("amountOffered", taskData.amountOffered);
-  
-
-  if (taskData.taskLocation) {
-    const [lat, lng] = taskData.taskLocation.split(",").map(Number);
-
-    const taskLocation = {
-      type: "Point",
-      coordinates: [lng, lat],
-      address: taskData.address || "",
+  try {
+   
+    const payload = {
+      status: "open",
+      category: taskData.category,
+      taskDescription: taskData.taskDescription,
+      negotiable: taskData.negotiable,
+      amountOffered: taskData.amountOffered,
     };
 
-    console.log(taskLocation ,"from creating task")
-
-    formData.append("taskLocation", JSON.stringify(taskLocation));
-  }
-
-  if (files && files.length > 0) {
-    for (const file of files) {
-      formData.append("images", file);
+    if (taskData.taskLocation) {
+      const [lat, lng] = taskData.taskLocation.split(",").map(Number);
+      payload.taskLocation = {
+        type: "Point",
+        coordinates: [lng, lat],
+        address: taskData.address || "",
+      };
     }
-  }
 
-  console.log([...formData])
+    let uploadedImageUrls = [];
 
-  try {
-    const res = await api.post("/tasks", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
-    console.log("Task creation successful");
+   
+    if (files && files.length > 0) {
+      
+      const sigRes = await api.get("/users/cloudinary-signature?folder=task_images");
+      const { timestamp, signature, folder, cloudName, apiKey,transformation } = sigRes.data.data;
+
+      
+        const uploadPromises = Array.from(files).map((compressedFile) => {
+        const cloudinaryFormData = new FormData();
+        cloudinaryFormData.append("file", compressedFile);
+        cloudinaryFormData.append("api_key", apiKey);
+        cloudinaryFormData.append("timestamp", timestamp);
+        cloudinaryFormData.append("signature", signature);
+        cloudinaryFormData.append("folder", folder);
+        cloudinaryFormData.append("transformation", transformation);
+        
+
+        return axios.post(
+          `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+          cloudinaryFormData
+        );
+      });
+
+     
+      const uploadResults = await Promise.all(uploadPromises);
+
+      
+      uploadedImageUrls = uploadResults.map((res) => res.data.secure_url);
+    }
+
+    
+    if (uploadedImageUrls.length > 0) {
+      payload.images = uploadedImageUrls; 
+    }
+
+    
+    const res = await api.post("/tasks", payload);
+    console.log("Task creation successful!");
 
     return res;
   } catch (err) {
