@@ -199,4 +199,8 @@
 
 }
 
+.taskListItem {
+  max-width: 100%;
+}
+
   }

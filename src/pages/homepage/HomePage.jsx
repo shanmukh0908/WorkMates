@@ -16,24 +16,12 @@ export default function HomePage() {
   const navigate = useNavigate();
   const {workMate,normalUser} = useSelector((store)=>store.userType)
 
-  async function handleClick() {
-  try {
-    const { lat, lng } = await getCurrentLocation();
+function handleClick() { 
     navigate("/tasks");
-    localStorage.setItem("userLocation", JSON.stringify([lng, lat]))
-  } catch (err) {
-    alert("Unable to get location: " + err.message);
-  }
 }
 
 async function handleClick2() {
-  try {
-    const { lat, lng } = await getCurrentLocation();
     navigate("/workmates");
-    localStorage.setItem("userLocation", JSON.stringify([lng, lat]))
-  } catch (err) {
-    alert("Unable to get location: " + err.message);
-  }
 }
 
 return (

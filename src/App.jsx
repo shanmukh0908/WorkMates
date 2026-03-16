@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import GlobalStyles from "./styles/GlobalStyles";
-import { Suspense, lazy, useEffect } from "react";
+import { Suspense, lazy } from "react";
 
 const AppLayout = lazy(() => import("./ui/AppLayout/AppLayout.jsx"));
 const HomePage = lazy(() => import("./pages/homepage/HomePage.jsx"));
@@ -24,24 +24,10 @@ const WorkMatesPage = lazy(() => import("./pages/workmatespage/WorkMatesPage.jsx
 const WorkMatePage = lazy(() => import("./pages/workmatepage/WorkMatePage.jsx"));
 
 import { savedTasksLoader } from "./pages/tasks/SavedTasksLoader.js";
-import { getCurrentLocation } from "./services/apis/GeoLocationApi.js";
 import { HomePageLoader } from "./pages/homepage/HomePageLoader.js";
 
 export default function App() {
   console.log("APP RENDERED");
-
-  useEffect(() => {
-    async function fetchLocation() {
-      try {
-        const { lat, lng } = await getCurrentLocation();
-        localStorage.setItem("userLocation", JSON.stringify([lng, lat]));
-      } catch (err) {
-        console.error("❌ Failed to get location:", err);
-      }
-    }
-
-    fetchLocation();
-  }, []);
 
   const desktopRoutes = [
     {

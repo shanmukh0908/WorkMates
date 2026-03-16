@@ -8,6 +8,7 @@ import getUserIdFromToken from "../../services/apis/getUserIdFromToken";
 import { useEffect, useState } from "react";
 import getUserDetails from "../../services/apis/getUserDetails";
 import { queryClient } from "../../services/apis/queryClient";
+import { getCurrentLocation } from "../../services/apis/GeoLocationApi";
 
 
 const StyledAppLayout = styled.div`
@@ -60,12 +61,13 @@ useEffect(() => {
 
   const fetchUser = async () => {
     try {
-      const res = await getUserDetails(); // API call
-      // setUser(res?.data?.user); // update state → re-render
+      const res = await getUserDetails(); 
       queryClient.setQueryData(["user"],res)
       console.log(res)
+      const { lat, lng } = await getCurrentLocation();
+      localStorage.setItem("userLocation", JSON.stringify([lng, lat]));
     } catch (err) {
-      console.log("Failed to fetch user:", err);
+      console.log("either Failed to fetch user or location", err);
     }
   };
 
