@@ -137,13 +137,18 @@ input:focus {
   top: 50%;
   left: 92%;
   transform: translateY(-50%);
+  transition: all 0.5s ease;
 }
 
 .sendIcon:hover{
-  fill: blue;
-  transform: scale(1.2);
+  fill: rgb(240, 240, 247);
+  width: 4rem;
+  padding: 1rem;
   transform: translateY(-50%);
-}
+  background-color :dodgerblue;
+  border-radius: 100px; 
+};
+
 
 .occupyFullView{
  
@@ -211,7 +216,7 @@ input:focus {
 }
 
 .sendIcon{
-  width: 12.5%;
+  width: 8.5%;
 }
 
 }
