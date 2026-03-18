@@ -1,21 +1,42 @@
-.paginationBox{
-    width: 400px;
+.paginationBox {
+    width: 40.0rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.leftArrow,.rightArrow{
-    width: 40px;
-    height: 30px;
-    border: 2px solid rgb(197, 192, 192);
-    border-radius: 6px;
-    font-size: bold;
-    stroke-width: 3px;
+.iconButton {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex; /* Ensures the SVG inside stays perfectly centered */
+}
+
+/* 2. Your original SVG styling (Position and Structure untouched) */
+.leftArrow, .rightArrow {
+    width: 4.0rem;
+    height: 3.0rem;
+    border: .2rem solid rgb(197, 192, 192);
+    border-radius: .6rem;
+    /* Note: 'font-size: bold' is invalid CSS. Heroicons rely on stroke-width, which you already have below! */
+    stroke-width: .3rem; 
     transition: all 0.2s;
 }
 
-.leftArrow:hover , .rightArrow:hover{
-    transform: scale(1.2,1.2);
+/* 3. Your original hover effect, updated to ONLY trigger if the button is active */
+.iconButton:not(:disabled):hover .leftArrow, 
+.iconButton:not(:disabled):hover .rightArrow {
+    transform: scale(1.2, 1.2);
     color: aqua;
+}
+
+/* 4. New: Visual feedback when a user cannot click back/forward */
+.iconButton:disabled {
+    cursor: not-allowed;
+}
+
+.iconButton:disabled .leftArrow, 
+.iconButton:disabled .rightArrow {
+    opacity: 0.4; /* Fades out the icon to show it's inactive */
 }

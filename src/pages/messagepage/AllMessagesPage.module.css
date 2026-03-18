@@ -5,7 +5,7 @@
 .messagesLayout {
   flex: 1;
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 1.25fr 3fr;
   /* height: calc(100vh - 70px); */
   background-color: #f9fafb;
   position: relative;
@@ -147,6 +147,10 @@
 
 
 @media(max-width :450px){
+
+  .messageItem{
+    font-size: 1rem;
+  }
 
   .messagesLayout {
   flex: 1;
