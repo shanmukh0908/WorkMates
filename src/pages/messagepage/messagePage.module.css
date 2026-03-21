@@ -142,7 +142,7 @@ input:focus {
 
 .sendIcon:hover{
   fill: rgb(240, 240, 247);
-  width: 4rem;
+  width: 3.5%;
   padding: 1rem;
   transform: translateY(-50%);
   background-color :dodgerblue;
@@ -218,6 +218,17 @@ input:focus {
 .sendIcon{
   width: 8.5%;
 }
+
+.sendIcon:hover{
+  fill: rgb(240, 240, 247);
+  width: 10.5%;
+  padding: 1rem;
+  transform: translateY(-50%);
+  background-color :dodgerblue;
+  border-radius: 100px; 
+};
+
+
 
 }
 

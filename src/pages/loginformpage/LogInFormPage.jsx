@@ -8,7 +8,10 @@ import useLogin from "../../hooks/auth/useLogIn";
 
 export default function LogInFormPage() {
 
-  const { register, reset, formState: { errors }, handleSubmit } = useForm();
+  const { register, reset, formState: { errors }, handleSubmit } = useForm({defaultValues: {
+    email: "testuser13@gmail.com",
+    password: "user@1234"
+  }});
   const { mutate: login, isPending } = useLogin();
 
   const onSubmit = (data) => {
