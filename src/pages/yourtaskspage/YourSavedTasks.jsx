@@ -19,8 +19,8 @@ function YourSavedTasks() {
 const storedLoc = JSON.parse(localStorage.getItem("userLocation")); // [lng, lat]
 const userLocation = { latitude: storedLoc[1], longitude: storedLoc[0] };
 
-const savedtasks = savedTasksData.map((t) => {
-  const [lng, lat] = t.task.taskLocation.coordinates; // GeoJSON: [lng, lat]
+const savedtasks = savedTasksData?.map((t) => {
+  const [lng, lat] = t.task?.taskLocation.coordinates; // GeoJSON: [lng, lat]
   const taskLoc = { latitude: lat, longitude: lng };
 
   const distanceInMeters = getDistance(userLocation, taskLoc);
