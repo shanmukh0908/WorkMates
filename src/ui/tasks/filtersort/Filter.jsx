@@ -65,7 +65,7 @@ export default function Filter({setFilters,setFilterDisplay}) {
     };
 
     case "APPLY_MINDATEFILTER": {
-      const minDate = new Date(action.payload); // payload should be a valid date string
+      const minDate = new Date(action.payload); 
       const formattedDate = minDate.toISOString().split("T")[0];
       return {
         ...state,

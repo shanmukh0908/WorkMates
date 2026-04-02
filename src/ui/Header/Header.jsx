@@ -15,18 +15,7 @@ import UserModal from "./UserModal";
 import NotificationModal from "./NotificationModal";
 import { queryClient } from "../../services/apis/queryClient";
 
-/* =======================
-   BRAND COLORS
-   =======================
-   Text / Structure:  #0C1D36
-   Primary Accent:    #4F46E5
-   Hover Accent:      #6366F1
-   Soft Accent BG:    rgba(79,70,229,0.15)
-*/
 
-/* =======================
-   LOGO
-   ======================= */
 
 const StyledLogo = styled.img`
   width: 9.5rem;

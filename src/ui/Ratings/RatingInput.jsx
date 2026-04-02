@@ -30,7 +30,7 @@ export default function RatingInput({ ratedTo, taskId }) {
       <button 
         className={styles.submitRatingButton} 
         onClick={handleSubmit}
-        disabled={isPending} // Prevent double-submit or empty ratings
+        disabled={isPending} 
       >
         {isPending ? "Posting..." : "SUBMIT RATING"}
       </button>

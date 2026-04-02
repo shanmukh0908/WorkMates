@@ -9,16 +9,15 @@ export default function useLogin() {
   return useMutation({
     mutationFn: logIn,
     onSuccess: (res) => {
-      // 1. Save the token (the only thing we keep in LocalStorage)
+      
       console.log(res);
       localStorage.removeItem("accessToken");
       localStorage.setItem("accessToken", res?.data?.accessToken || "");
       
-      // 2. Optimistically fill the "user" cache with the login response
-      // This prevents that "loading" flicker on the first page load
+      // Optimistically fill the "user" cache with the login response
+      // This prevents that "loading" flicker when the pages loads for first time
       queryClient.setQueryData(["user"], res.data.data.user);
 
-      // 3. Move to the main app
       navigate("/")
     },
     onError: (err) => {

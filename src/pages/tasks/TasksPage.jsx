@@ -126,7 +126,7 @@ const [filters,setFilters] = useState({})
         ))}
       </ul> </div>: filtertaskdata?.length > 0  ? <h1>LOADING...</h1>  : 
       <div className={styles.gobackLink} onClick={() => navigate(-1)} >
-      no tasks to display with your required details... <span>Go back</span>
+      please wait while tasks are loading... <span>Go back</span>
     </div>
     }
 

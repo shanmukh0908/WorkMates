@@ -12,7 +12,7 @@ export default function Pagination({ count, pageSize }) {
   const pageCount = Math.ceil(count / pageSize);
 
   function nextPage() {
-    // Guard clause prevents unnecessary state updates
+
     if (currentPage === pageCount) return; 
     
     searchParams.set("page", currentPage + 1);
@@ -26,7 +26,7 @@ export default function Pagination({ count, pageSize }) {
     setSearchParams(searchParams);
   }
 
-  // React strictly expects 'null' instead of empty return for rendering nothing
+  
   if (pageCount <= 1) return null; 
 
   return (

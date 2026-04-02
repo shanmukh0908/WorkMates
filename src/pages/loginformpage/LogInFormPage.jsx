@@ -34,7 +34,7 @@ export default function LogInFormPage() {
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className={styles.logInform}>
-        {/* same as handleSubmit((data)=>onSubmit(data)) */}
+        
 
         {/* Email Field */}
         <div className={styles.emailBox}>

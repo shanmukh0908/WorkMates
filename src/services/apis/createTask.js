@@ -25,7 +25,7 @@ const createTask = async function (taskData, files) {
 
    
     if (files && files.length > 0) {
-      
+      console.log(files)
       const sigRes = await api.get("/users/cloudinary-signature?folder=task_images");
       const { timestamp, signature, folder, cloudName, apiKey,transformation } = sigRes.data.data;
 
@@ -48,18 +48,19 @@ const createTask = async function (taskData, files) {
 
      
       const uploadResults = await Promise.all(uploadPromises);
-
-      
+      // console.log(uploadResults,"********",uploadedImageUrls)
       uploadedImageUrls = uploadResults.map((res) => res.data.secure_url);
+      if (uploadedImageUrls.length > 0) {
+        payload.taskImages = uploadedImageUrls; 
+      }
+      // console.log(uploadResults,"********",uploadedImageUrls)
+
     }
 
     
-    if (uploadedImageUrls.length > 0) {
-      payload.images = uploadedImageUrls; 
-    }
-
-    
+   
     const res = await api.post("/tasks", payload);
+    // console.log(payload)
     console.log("Task creation successful!");
 
     return res;

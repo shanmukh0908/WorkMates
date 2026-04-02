@@ -8,7 +8,7 @@ export function useUpdateUserProfile() {
   return useMutation({
     mutationFn: updateUserProfile,
 
-    // 🔥 Optimistic update
+    //  Optimistic update
     onMutate: async (newData) => {
       await queryClient.cancelQueries(["user"]);
 
@@ -22,14 +22,14 @@ export function useUpdateUserProfile() {
       return { previousUser };
     },
 
-    // ❌ Rollback if error
+    //Rollback if error
     onError: (err, newData, context) => {
       if (context?.previousUser) {
         queryClient.setQueryData(["user"], context.previousUser);
       }
     },
 
-    // ✅ Sync with real backend response
+    // Sync with real backend response
     onSuccess: (serverData) => {
       queryClient.setQueryData(["user"], (oldData) => ({
         ...oldData,

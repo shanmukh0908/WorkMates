@@ -23,6 +23,8 @@ export default function WorkItemPage() {
   let {task} = location.state
   
   console.log(task)
+  const profilePhoto = task?.createdBy?.profilePhoto
+  console.log(profilePhoto)
   let ratedTo = null;
 
 if (user.toString() === task?.acceptedBy?.toString()) {
@@ -108,7 +110,7 @@ async function onSubmit(formData) {
   });
 }
 
-let profilePhoto = task?.createdBy?.profilePhoto
+
 
   return (
     <div className={styles.taskBox}>

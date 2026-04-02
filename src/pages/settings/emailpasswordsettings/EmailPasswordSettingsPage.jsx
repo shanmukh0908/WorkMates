@@ -19,7 +19,7 @@ export default function EmailPasswordSettingsPage() {
     reset,
     watch,
   } = useForm({
-    mode: "onBlur", // better UX
+    mode: "onBlur", 
   });
 
   // Watch password safely
@@ -34,10 +34,6 @@ export default function EmailPasswordSettingsPage() {
 
   const onSubmit = async (data) => {
     try {
-      // const payload = {
-      //   emailid: data.emailid,
-      //   password: data.password,
-      // };
 
       const res = await updateUserDetails(data);
       console.log(" update successful", res.data);

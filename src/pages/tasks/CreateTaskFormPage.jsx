@@ -45,7 +45,7 @@ export default function CreateTaskFormPage() {
 
   // Handle file input change
 const handleImageChange = (e) => {
-  const files = Array.from(e.target.files); // convert FileList to array
+  const files = Array.from(e.target.files); 
   setValue("taskImages", files); // update react-hook-form value
   const previews = files.map(file => URL.createObjectURL(file));
   setImagePreviews(previews);

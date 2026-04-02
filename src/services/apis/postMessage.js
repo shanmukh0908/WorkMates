@@ -5,9 +5,6 @@ import api from './axios';
 
 const postMessage = async (data = {}) => {
   try {
-    // const { to, message, messageType = "normal" } = data;
-    // console.log(messageType)
-    // const body = { to, message,messageType };
     console.log("message ******",data)
     const res = await api.post('/messages', data);
     console.log('✅ Message sent successfully');

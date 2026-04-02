@@ -23,13 +23,7 @@ export default function AllMessagesPage() {
 
   return (
     <div className={styles.messagesLayout}>
-      {/* <button
-        className={styles.closeButton}
-        onClick={() => setDisplaysidebar(prev => !prev)}
-      >
-      <XMarkIcon className={styles.Xmark}/>
-      </button> */}
-      {/* Left Sidebar (Messages List) */}
+      
       <aside className={`${styles.sidebar} ${ displaysidebar ? styles.occupyFullViewSidebar : styles.hideSideBar}`}>
         <ul className={styles.messageList}>
           {messages.map((message) => (
@@ -55,9 +49,9 @@ export default function AllMessagesPage() {
         </ul>
       </aside>
 
-      {/* Right Side (Conversation) */}
+      
       <main className={styles.main}>
-        <Outlet context={{ displaysidebar, setDisplaysidebar }}/> {/* ✅ This will render <MessagePage /> when route matches /messages/:id */}
+        <Outlet context={{ displaysidebar, setDisplaysidebar }}/> 
       </main>
     </div>
   );

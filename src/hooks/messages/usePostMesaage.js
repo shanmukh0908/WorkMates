@@ -5,7 +5,7 @@ export default function useUpdateTask() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    // Variables will be passed as { taskId, payload }
+    //  { taskId, payload }
     mutationFn: (payload) => postMessage(payload),
 
     onSuccess: (data, variables) => {
