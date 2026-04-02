@@ -8,7 +8,7 @@ function SavedTasks({ styles, task }) {
   const queryClient = useQueryClient();
   const savedtasks = queryClient.getQueryData(["savedtasks"]) || [];
   console.log("savedtasks from saved tasks jsx",savedtasks)
-  const savedtaskids = savedtasks.map((t) => t.task._id);
+  const savedtaskids = savedtasks?.map((t) => t?.task?._id);
   const isSaved = savedtaskids.includes(task._id);
 
   const { mutate: toggleSave } = useToggleSave();
