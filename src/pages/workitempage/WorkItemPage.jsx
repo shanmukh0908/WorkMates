@@ -119,7 +119,7 @@ async function onSubmit(formData) {
           
          {profilePhoto != "" ?
          <img 
-          src={profilePhoto.startsWith("https://res.cloudinary.com") ? `${task?.createdBy?.profilePhoto}`:`http://localhost:3000/public/profilephotos/${task?.createdBy?.profilePhoto}`} 
+          src={profilePhoto?.startsWith("https://res.cloudinary.com") ? `${task?.createdBy?.profilePhoto}`:`http://localhost:3000/public/profilephotos/${task?.createdBy?.profilePhoto}`} 
           alt="user1" 
           className={styles.userImg} 
         />
